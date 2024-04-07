@@ -12,7 +12,7 @@ import {
 
 export default function Maintenance() {
     return (
-        <View>
+        <View style={styles.text}>
             <Text>I AM MAINTENANCE</Text>
         </View>
     )
@@ -20,6 +20,7 @@ export default function Maintenance() {
 
 const styles = StyleSheet.create({
     text: {
-        fontC
+        color: 'blue',
+        borderWidth: 5
     }
 })

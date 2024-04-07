@@ -10,6 +10,7 @@ import {
   Linking,
   Platform
 } from 'react-native';
+import Maintenance from './Maintenance'
 
 export default function App() {
   return (
@@ -27,7 +28,7 @@ export default function App() {
         {/*TITLE TEXT*/}
         <View style={styles.phoneNumbers}> 
           <Text style={{paddingRight: 10, fontSize: 15}}>Contact Staff via Phone</Text>
-          <Image source={require("./assets/phone_calling.png")} style={{height: 10, width: 10}}/>
+          <Image source={require("./assets/washuLogo.png")} style={{height: 10, width: 10}}/>
         </View>
         {/*PHONE NUMBER AND RESOURCE LINKS*/}
         <View> 
@@ -37,8 +38,8 @@ export default function App() {
           </View>
         </View>
       </View>
-
-
+      <Maintenance />
+{/* 
       <Button
         title="u should press me"
         color ="#000000"
@@ -47,7 +48,7 @@ export default function App() {
       <Button
         title="lalalalalalala"
         onPress={() => Linking.openURL(`tel:+1(847)-502-8096`)}
-      />
+      /> */}
       <StatusBar style="auto" />
     </View>
   );
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
   },
   phoneNumbers: {
     flexDirection: 'row',
-    justifyContent: 'flext-start',
+    justifyContent: 'flex-start',
     alignItems: 'center',
   }
 });

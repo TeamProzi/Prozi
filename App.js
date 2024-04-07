@@ -18,6 +18,10 @@ export default function App() {
         color ="#ffffff"
         onPress={() => Linking.openURL('https://www.youtube.com/watch?v=Z2xooz6844k')}
       />
+      <Button
+        title="lalalalalalala"
+        onPress={() => Linking.openURL(`tel:+1(847)-502-8096`)}
+      />
       <StatusBar style="auto" />
     </View>
   );

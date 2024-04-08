@@ -8,7 +8,7 @@ import {
   Text,
   Alert,
   Linking,
-  Platform
+  Platform,
 } from 'react-native';
 import Maintenance from './Maintenance'
 import Advocate from './Advocate';
@@ -34,8 +34,37 @@ export default function App() {
         {/*PHONE NUMBER AND RESOURCE LINKS*/}
         <View> 
           <View style={styles.phoneNumbers}>
-            <Text>RCD</Text>
-            <Text>RCD on Call</Text>
+            <View style={styles.phoneIcon}>
+              <Text style= {styles.phoneIconText}>RCD</Text>
+            </View>
+            <Button
+              title="RCD on Call"
+              onPress={() => Linking.openURL(`tel:+1(314)-323-0840`)}
+            />
+          </View>
+          <View style={styles.phoneNumbers}>
+            <View style={styles.phoneIcon}>
+              <Text style= {styles.phoneIconText}>AR CD</Text>
+            </View>
+            <Button
+              title="ARCD on Call"
+              onPress={() => Linking.openURL(`tel:+1(314)-393-6354`)}
+            />
+          </View>
+          <View style={styles.phoneNumbers}>
+            <View style={styles.phoneIcon}>
+              <Text style= {styles.phoneIconText}>RA</Text>
+            </View>
+            <Button 
+              title="RA on Call"
+              onPress={() => Linking.openURL(`tel:+1(314)-374-1321`)}
+            />
+          </View>
+          <View style={styles.phoneNumbers}>
+            <View style={styles.phoneIcon}>
+            <Image source={require("./assets/WUPD.png")} style={{height: 18, width: 18}}/>
+            </View>
+            <Text>RA on Call</Text>
           </View>
         </View>
       </View>
@@ -101,5 +130,30 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+  phoneIcon: {
+    borderWidth: 0.5, 
+    borderColor: "#007360", 
+    borderRadius: 3, 
+    height: 21, 
+    width: 21,
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center'
+  },
+  phoneIconText: {
+    fontSize: 8, 
+    fontWeight: 'bold', 
+    color: "#007360"
   }
 });
+
+const buttonTitles = () => {
+  return (
+    <View style={{ flexDirection: 'column' }}>
+      <Text style={{ fontStyle: 'italic', fontSize: 12 }}>
+        RA on Call
+      </Text>
+    </View>
+  );
+  };

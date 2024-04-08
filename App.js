@@ -11,6 +11,7 @@ import {
   Platform
 } from 'react-native';
 import Maintenance from './Maintenance'
+import Advocate from './Advocate';
 
 export default function App() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
         </View>
       </View>
       <Maintenance />
+      <Advocate />
 {/* 
       <Button
         title="u should press me"

@@ -29,7 +29,7 @@ export default function App() {
         {/*TITLE TEXT*/}
         <View style={styles.phoneNumbers}> 
           <Text style={{paddingRight: 10, fontSize: 15}}>Contact Staff via Phone</Text>
-          <Image source={require("./assets/washuLogo.png")} style={{height: 10, width: 10}}/>
+          <Image source={require("./assets/phone_calling.png")} style={{height: 10, width: 10}}/>
         </View>
         {/*PHONE NUMBER AND RESOURCE LINKS*/}
         <View> 

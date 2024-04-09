@@ -13,10 +13,17 @@ import {
   onPress,
   Touchable
 } from 'react-native';
+import DutyProtocol from './DutyProtocol';
 import Maintenance from './Maintenance'
 import Advocate from './Advocate';
 
 export default function App() {
+
+  let protocols = [{name: "Lockouts >", icon: require("./assets/lock.png")},
+                   {name: "Maintenance >", icon: require("./assets/maintenance.png")},
+                   {name: "Substances >", icon: require("./assets/substances.png")}, 
+                   {name: "Health >", icon: require("./assets/health.png")} ] ;
+
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
@@ -85,6 +92,18 @@ export default function App() {
           </TouchableOpacity>
         </View>
       </View>
+      
+      <View style={styles.protocols}>
+  {[0, 1, 2, 3].map((idx) => (
+    <View key={idx} style={styles.column}>
+      <DutyProtocol
+        name={protocols[idx].name}
+        icon={protocols[idx].icon}
+      />
+    </View>
+  ))}
+</View>
+
       <Maintenance />
       <Advocate />
 {/* 
@@ -168,5 +187,13 @@ const styles = StyleSheet.create({
   },
   phoneNumberResources: {
     flexDirection: 'row',
-  }
+  },
+  protocols: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  column: {
+    width: '50%', // Two columns for each row
+    padding: 5, // Adjust spacing as needed
+  },
 });

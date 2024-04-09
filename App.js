@@ -9,6 +9,8 @@ import {
   Alert,
   Linking,
   Platform,
+  TouchableOpacity,
+  onPress
 } from 'react-native';
 import Maintenance from './Maintenance'
 import Advocate from './Advocate';
@@ -37,34 +39,33 @@ export default function App() {
             <View style={styles.phoneIcon}>
               <Text style= {styles.phoneIconText}>RCD</Text>
             </View>
-            <Button
-              title="RCD on Call"
-              onPress={() => Linking.openURL(`tel:+1(314)-323-0840`)}
-            />
+            <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-323-0840`)}>
+              <Text>RCD on Call</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.phoneNumbers}>
             <View style={styles.phoneIcon}>
               <Text style= {styles.phoneIconText}>AR CD</Text>
             </View>
-            <Button
-              title="ARCD on Call"
-              onPress={() => Linking.openURL(`tel:+1(314)-393-6354`)}
-            />
+            <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-393-6354`)}>
+              <Text>ARCD on Call</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.phoneNumbers}>
             <View style={styles.phoneIcon}>
               <Text style= {styles.phoneIconText}>RA</Text>
             </View>
-            <Button 
-              title="RA on Call"
-              onPress={() => Linking.openURL(`tel:+1(314)-374-1321`)}
-            />
+            <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-374-1321`)}>
+              <Text>RA on Call</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.phoneNumbers}>
             <View style={styles.phoneIcon}>
-            <Image source={require("./assets/WUPD.png")} style={{height: 18, width: 18}}/>
+              <Image source={require("./assets/WUPD.png")} style={{height: 18, width: 18}}/>
             </View>
-            <Text>RA on Call</Text>
+            <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-935-5555`)}>
+              <Text>WUPD Phone</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>

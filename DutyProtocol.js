@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     button: {
         flexDirection: 'row',
         alignItems: 'center',
-        borderRadius: 15,
+        borderRadius: 12,
         backgroundColor: '#007360',
         height: 45,
         width: 163,
@@ -36,16 +36,16 @@ const styles = StyleSheet.create({
     },
     view: {
         backgroundColor: '#61948B',
-        borderRadius: 10,
+        borderRadius: 7,
         width: 27,
         height: 27,
         alignItems: 'center',
         justifyContent: 'center',
     },
     text: {
-        fontSize: 16,
+        fontSize: 12,
         color: '#FFFFFF',
-        fontWeight: 'bold',
+        fontWeight: '500',
         paddingLeft: 5
     },
     image: {

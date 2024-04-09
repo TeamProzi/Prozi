@@ -10,7 +10,8 @@ import {
   Linking,
   Platform,
   TouchableOpacity,
-  onPress
+  onPress,
+  Touchable
 } from 'react-native';
 import Maintenance from './Maintenance'
 import Advocate from './Advocate';
@@ -27,46 +28,61 @@ export default function App() {
       </View>
 
       {/* PHONE NUMBER & RESOURCES */}
-      <View> 
+      <View style={styles.PNR}>  
         {/*TITLE TEXT*/}
         <View style={styles.phoneNumbers}> 
           <Text style={{paddingRight: 10, fontSize: 15}}>Contact Staff via Phone</Text>
           <Image source={require("./assets/phone_calling.png")} style={{height: 10, width: 10}}/>
         </View>
         {/*PHONE NUMBER AND RESOURCE LINKS*/}
-        <View> 
-          <View style={styles.phoneNumbers}>
-            <View style={styles.phoneIcon}>
-              <Text style= {styles.phoneIconText}>RCD</Text>
+        <View style={styles.phoneNumberResources}> 
+          {/*GROUP 1*/}
+          <View>
+            <View style={styles.phoneNumbers}>
+              <View style={styles.phoneIcon}>
+                <Text style= {styles.phoneIconText}>RCD</Text>
+              </View>
+              <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-323-0840`)}>
+                <Text>RCD on Call</Text>
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-323-0840`)}>
-              <Text>RCD on Call</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.phoneNumbers}>
-            <View style={styles.phoneIcon}>
-              <Text style= {styles.phoneIconText}>AR CD</Text>
+            <View style={styles.phoneNumbers}>
+              <View style={styles.phoneIcon}>
+                <Text style= {styles.phoneIconText}>AR CD</Text>
+              </View>
+              <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-393-6354`)}>
+                <Text>ARCD on Call</Text>
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-393-6354`)}>
-              <Text>ARCD on Call</Text>
-            </TouchableOpacity>
           </View>
-          <View style={styles.phoneNumbers}>
-            <View style={styles.phoneIcon}>
-              <Text style= {styles.phoneIconText}>RA</Text>
+          {/*GROUP 2*/}
+          <View>
+            <View style={styles.phoneNumbers}>
+              <View style={styles.phoneIcon}>
+                <Text style= {styles.phoneIconText}>RA</Text>
+              </View>
+              <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-374-1321`)}>
+                <Text>RA on Call</Text>
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-374-1321`)}>
-              <Text>RA on Call</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.phoneNumbers}>
-            <View style={styles.phoneIcon}>
-              <Image source={require("./assets/WUPD.png")} style={{height: 18, width: 18}}/>
+            <View style={styles.phoneNumbers}>
+              <View style={styles.phoneIcon}>
+                <Image source={require("./assets/WUPD.png")} style={{height: 18, width: 18}}/>
+              </View>
+              <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-935-5555`)}>
+                <Text>WUPD Phone</Text>
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-935-5555`)}>
-              <Text>WUPD Phone</Text>
-            </TouchableOpacity>
           </View>
+          {/*GROUP 3: More Resources*/}
+          <TouchableOpacity style={{width: 83, H: 76, 
+                                    backgroundColor: '#FBFBFB',
+                                    borderWidth: 0.5, 
+                                    borderColor: "#007360", 
+                                    borderRadius: 8, 
+                                    alignItems: 'center'}}>
+            <Text>More</Text><Text>Resources</Text>
+          </TouchableOpacity>
         </View>
       </View>
       <Maintenance />
@@ -146,15 +162,11 @@ const styles = StyleSheet.create({
     fontSize: 8, 
     fontWeight: 'bold', 
     color: "#007360"
+  },
+  PNR: {
+    width: '100%'
+  },
+  phoneNumberResources: {
+    flexDirection: 'row',
   }
 });
-
-const buttonTitles = () => {
-  return (
-    <View style={{ flexDirection: 'column' }}>
-      <Text style={{ fontStyle: 'italic', fontSize: 12 }}>
-        RA on Call
-      </Text>
-    </View>
-  );
-  };

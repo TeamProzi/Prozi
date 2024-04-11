@@ -16,6 +16,7 @@ import {
 import DutyProtocol from './DutyProtocol';
 import Maintenance from './Maintenance'
 import Advocate from './Advocate';
+import PhoneNumbers from './PhoneNumbers';
 
 export default function App() {
 
@@ -23,6 +24,11 @@ export default function App() {
   { name: "Maintenance >", icon: require("./assets/maintenance.png") },
   { name: "Substances >", icon: require("./assets/substances.png") },
   { name: "Health >", icon: require("./assets/health.png") }];
+
+  let phones = [{ icon: "RCD", phone: Linking.openURL('tel:+1(314)-323-0840'), labelText: "RCD on Call", isText: true },
+  { icon: "AR CD", phone: Linking.openURL('tel:+1(314)-393-6354'), labelText: "ARCD on Call", isText: true },
+  { icon: "RA", phone: Linking.openURL('tel:+1(314)-374-1321'), labelText: "RA on Call", isText: true },
+  { icon: require("./assets/WUPD.png"), phone: Linking.openURL('tel:+1(314)-374-1321'), labelText: "WUPD Phone", isText: false }];
 
   return (
     <View style={styles.container}>
@@ -43,43 +49,17 @@ export default function App() {
         </View>
         {/*PHONE NUMBER AND RESOURCE LINKS*/}
         <View style={styles.phoneNumberResources}>
-          {/*GROUP 1*/}
-          <View>
-            <View style={styles.phoneNumbers}>
-              <View style={styles.phoneIcon}>
-                <Text style={styles.phoneIconText}>RCD</Text>
+          <View style={styles.protocols}>
+            {[0, 1, 2, 3].map((idx) => (
+              <View key={idx} style={styles.pnColumn}>
+                <PhoneNumbers
+                  icon={phones[idx].icon}
+                  phone={phones[idx].phone}
+                  labelText={phones[idx].labelText}
+                  isText={phones[idx].isText}
+                />
               </View>
-              <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-323-0840`)}>
-                <Text>RCD on Call</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.phoneNumbers}>
-              <View style={styles.phoneIcon}>
-                <Text style={styles.phoneIconText}>AR CD</Text>
-              </View>
-              <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-393-6354`)}>
-                <Text>ARCD on Call</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-          {/*GROUP 2*/}
-          <View>
-            <View style={styles.phoneNumbers}>
-              <View style={styles.phoneIcon}>
-                <Text style={styles.phoneIconText}>RA</Text>
-              </View>
-              <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-374-1321`)}>
-                <Text>RA on Call</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.phoneNumbers}>
-              <View style={styles.phoneIcon}>
-                <Image source={require("./assets/WUPD.png")} style={{ height: 18, width: 18 }} />
-              </View>
-              <TouchableOpacity onPress={() => Linking.openURL(`tel:+1(314)-935-5555`)}>
-                <Text>WUPD Phone</Text>
-              </TouchableOpacity>
-            </View>
+            ))}
           </View>
           {/*GROUP 3: More Resources*/}
           <TouchableOpacity style={{
@@ -94,10 +74,9 @@ export default function App() {
           </TouchableOpacity>
         </View>
       </View>
-
       <View style={styles.protocols}>
         {[0, 1, 2, 3].map((idx) => (
-          <View key={idx} style={styles.column}>
+          <View key={idx} style={styles.protoColumn}>
             <DutyProtocol
               name={protocols[idx].name}
               icon={protocols[idx].icon}
@@ -105,20 +84,7 @@ export default function App() {
           </View>
         ))}
       </View>
-
-      <Maintenance />
-      <Advocate />
-      {/* 
-      <Button
-        title="u should press me"
-        color ="#000000"
-        onPress={() => Linking.openURL('https://www.youtube.com/watch?v=Z2xooz6844k')}
-      />
-      <Button
-        title="lalalalalalala"
-        onPress={() => Linking.openURL(`tel:+1(847)-502-8096`)}
-      /> */}
-      <StatusBar style="auto" />
+      <StatusBar style="auto"/>
     </View>
   );
 }
@@ -194,8 +160,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
-  column: {
+  protoColumn: {
     width: '50%', // Two columns for each row
     padding: 5, // Adjust spacing as needed
   },
+  pnColumn: {
+    width: '33%', //Three columns
+  }
 });

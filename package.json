@@ -11,12 +11,13 @@
   "dependencies": {
     "@expo/html-elements": "^0.9.1",
     "expo": "^49.0.23",
+    "expo-font": "~11.4.0",
+    "expo-splash-screen": "^0.26.4",
     "expo-status-bar": "~1.11.1",
     "npm": "^10.5.2",
     "react": "18.2.0",
     "react-native": "0.73.5",
-    "start": "^5.1.0",
-    "expo-font": "~11.4.0"
+    "start": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

@@ -10,6 +10,13 @@ import {
   TouchableOpacity,
   onPress,
 } from 'react-native';
+
+{/*FONTS*/ }
+import { useCallback } from 'react';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+
+{/*OTHER PAGES*/}
 import DutyProtocol from './DutyProtocol';
 import Maintenance from './Maintenance'
 import Advocate from './Advocate';
@@ -17,33 +24,55 @@ import PhoneNumbers from './PhoneNumbers';
 
 export default function App() {
 
-  let protocols = [{ name: "Lockouts >", icon: require("./assets/lock.png") },
-  { name: "Maintenance >", icon: require("./assets/maintenance.png") },
-  { name: "Substances >", icon: require("./assets/substances.png") },
-  { name: "Health >", icon: require("./assets/health.png") }];
+  {/**FOR CUSTOM FONTS TO WORK*/}
+  SplashScreen.preventAutoHideAsync();
+
+  const [fontsLoaded, fontError] = useFonts({
+    'SourceSans3Light': require('./assets/Source_Sans_3/static/SourceSans3-Light.ttf'),
+    'SourceSans3Bold': require('./assets/Source_Sans_3/static/SourceSans3-Bold.ttf')
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded || fontError) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, fontError]);
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
+  {/**REFACTORING OF APP SECTIONS */}
+  let protocols = [{ name: "Lockouts >", icon: require("./assets/Images/lock.png") },
+  { name: "Maintenance >", icon: require("./assets/Images/maintenance.png") },
+  { name: "Substances >", icon: require("./assets/Images/substances.png") },
+  { name: "Health >", icon: require("./assets/Images/health.png") }];
 
   let phones = [{ icon: "RCD", phone: Linking.openURL('tel:+1(314)-323-0840'), labelText: "RCD on Call", isText: true },
   { icon: "AR CD", phone: Linking.openURL('tel:+1(314)-393-6354'), labelText: "ARCD on Call", isText: true },
   { icon: "RA", phone: Linking.openURL('tel:+1(314)-374-1321'), labelText: "RA on Call", isText: true },
-  { icon: require("./assets/WUPD.png"), phone: Linking.openURL('tel:+1(314)-374-1321'), labelText: "WUPD Phone", isText: false }];
+  { icon: require("./assets/Images/WUPD.png"), phone: Linking.openURL('tel:+1(314)-374-1321'), labelText: "WUPD Phone", isText: false }];
 
+  {/**MAIN BODY */}
   return (
     <View style={styles.container}>
+
+      {/**HEADER */}
       <View style={styles.innerContainer}>
         <View style={styles.headerContainer}>
           <Text style={styles.welcome}>Welcome!</Text>
           <Text style={styles.titleText}>
-            <Text style={styles.boldTitleText}>RA </Text> | Washington University in St. Louis</Text>
+            <Text style={styles.boldTitleText}>RA</Text> | Washington University in St. Louis</Text>
         </View>
-        <Image source={require("./assets/washuLogo.png")} />
+        <Image source={require("./assets/Images/washuLogo.png")} />
       </View>
 
-      {/* PHONE NUMBER & RESOURCES */}
+      {/*SECTION 1 - PHONE NUMBER & RESOURCES */}
       <View style={styles.pnrView}>
         {/*TITLE TEXT*/}
         <View style={styles.pnrTitle}>
           <Text style={{ paddingRight: 10, fontSize: 15 }}>Contact Staff via Phone</Text>
-          <Image source={require("./assets/phone_calling.png")} style={{ height: 10, width: 10 }} />
+          <Image source={require("./assets/Images/phone_calling.png")} style={{ height: 10, width: 10 }} />
         </View>
         {/*PHONE NUMBER AND RESOURCE LINKS*/}
         <View style={styles.pnrInnerContainer}>
@@ -74,7 +103,7 @@ export default function App() {
       </View>
 
 
-      {/*ALL PROTOCOLS*/}
+      {/*SECTION 2 - ALL PROTOCOLS*/}
       <View style={styles.protocols}>
         {[0, 1, 2, 3].map((idx) => (
           <View key={idx} style={styles.protoColumn}>
@@ -125,15 +154,17 @@ const styles = StyleSheet.create({
     }),
   },
   welcome: {
-    paddingBottom: 5,
+    paddingBottom: 0,
     fontSize: 20,
+    fontFamily: 'SourceSans3Light'
   },
   titleText: {
     fontSize: 15,
-    fontFamily: 'Source Sans 3'
+    fontFamily: 'SourceSans3Light'
   },
   boldTitleText: {
     fontWeight: 'bold',
+    fontFamily: 'SourceSans3Bold',
     fontSize: 15,
   },
   pnrTitle: {

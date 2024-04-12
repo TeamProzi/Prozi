@@ -1,17 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import {
   StyleSheet,
-  Button,
   View,
   Image,
   SafeAreaView,
   Text,
-  Alert,
   Linking,
   Platform,
   TouchableOpacity,
   onPress,
-  Touchable
 } from 'react-native';
 import DutyProtocol from './DutyProtocol';
 import Maintenance from './Maintenance'
@@ -35,21 +32,22 @@ export default function App() {
       <View style={styles.innerContainer}>
         <View style={styles.headerContainer}>
           <Text style={styles.welcome}>Welcome!</Text>
-          <Text style={styles.titleText}>RA | Washington University in St. Louis</Text>
+          <Text style={styles.titleText}>
+            <Text style={styles.boldTitleText}>RA </Text> | Washington University in St. Louis</Text>
         </View>
         <Image source={require("./assets/washuLogo.png")} />
       </View>
 
       {/* PHONE NUMBER & RESOURCES */}
-      <View style={styles.PNR}>
+      <View style={styles.pnrView}>
         {/*TITLE TEXT*/}
-        <View style={styles.phoneNumbers}>
+        <View style={styles.pnrTitle}>
           <Text style={{ paddingRight: 10, fontSize: 15 }}>Contact Staff via Phone</Text>
           <Image source={require("./assets/phone_calling.png")} style={{ height: 10, width: 10 }} />
         </View>
         {/*PHONE NUMBER AND RESOURCE LINKS*/}
-        <View style={styles.phoneNumberResources}>
-          <View style={styles.protocols}>
+        <View style={styles.pnrInnerContainer}>
+          <View style={styles.pNumbers}>
             {[0, 1, 2, 3].map((idx) => (
               <View key={idx} style={styles.pnColumn}>
                 <PhoneNumbers
@@ -74,6 +72,9 @@ export default function App() {
           </TouchableOpacity>
         </View>
       </View>
+
+
+      {/*ALL PROTOCOLS*/}
       <View style={styles.protocols}>
         {[0, 1, 2, 3].map((idx) => (
           <View key={idx} style={styles.protoColumn}>
@@ -84,7 +85,7 @@ export default function App() {
           </View>
         ))}
       </View>
-      <StatusBar style="auto"/>
+      <StatusBar style="auto" />
     </View>
   );
 }
@@ -129,8 +130,13 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 15,
+    fontFamily: 'Source Sans 3'
   },
-  phoneNumbers: {
+  boldTitleText: {
+    fontWeight: 'bold',
+    fontSize: 15,
+  },
+  pnrTitle: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -150,21 +156,34 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: "#007360"
   },
-  PNR: {
-    width: '100%'
+  pnrView: {
+    width: '100%',
+    backgroundColor: 'blue',
+    padding: 10
   },
   phoneNumberResources: {
     flexDirection: 'row',
+    width: '75%',
+    backgroundColor: 'red'
   },
   protocols: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    backgroundColor: 'yellow'
+  },
+  pNumbers: {
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
   protoColumn: {
     width: '50%', // Two columns for each row
-    padding: 5, // Adjust spacing as needed
+    padding: 10, // Adjust spacing as needed
   },
   pnColumn: {
-    width: '33%', //Three columns
+    width: '40%',
+  },
+  pnrInnerContainer: {
+    flexDirection: 'row',
+    width: "75%%"
   }
 });

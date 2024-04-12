@@ -46,7 +46,7 @@ export default function App() {
   { name: "Health >", icon: require("./assets/health.png") }];
 
   let phones = [{ icon: "RCD", phone: Linking.openURL('tel:+1(314)-323-0840'), labelText: "RCD on Call", isText: true },
-  { icon: "AR CD", phone: Linking.openURL('tel:+1(314)-393-6354'), labelText: "ARCD on Call", isText: true },
+  { icon: "AR\nCD", phone: Linking.openURL('tel:+1(314)-393-6354'), labelText: "ARCD on Call", isText: true },
   { icon: "RA", phone: Linking.openURL('tel:+1(314)-374-1321'), labelText: "RA on Call", isText: true },
   { icon: require("./assets/WUPD.png"), phone: Linking.openURL('tel:+1(314)-374-1321'), labelText: "WUPD Phone", isText: false }];
 
@@ -67,7 +67,10 @@ export default function App() {
       <View style={styles.pnrView}>
         {/*TITLE TEXT*/}
         <View style={styles.pnrTitle}>
-          <Text style={{ paddingRight: 10, fontSize: 15 }}>Contact Staff via Phone</Text>
+          <Text style={{ paddingLeft: 10, paddingRight: 10, paddingTop: 5, 
+                          fontSize: 15 , fontFamily: 'SourceSans3Light'}}>
+            <Text style={styles.boldTitleText}>Contact </Text>
+            Staff via Phone</Text>
           <Image source={require("./assets/phone_calling.png")} style={{ height: 10, width: 10 }} />
         </View>
         {/*PHONE NUMBER AND RESOURCE LINKS*/}
@@ -86,12 +89,14 @@ export default function App() {
           </View>
           {/*GROUP 3: More Resources*/}
           <TouchableOpacity style={{
-            width: 83, H: 76,
+            width: 83, height: 76,
             backgroundColor: '#FBFBFB',
             borderWidth: 0.5,
             borderColor: "#007360",
             borderRadius: 8,
-            alignItems: 'center'
+            alignItems: 'center',
+            justifyContent: 'center',
+
           }}>
             <Text>More</Text><Text>Resources</Text>
           </TouchableOpacity>
@@ -207,7 +212,8 @@ const styles = StyleSheet.create({
     padding: 10, // Adjust spacing as needed
   },
   pnColumn: {
-    width: '40%',
+    width: '47%',
+    padding: 10
   },
   pnrInnerContainer: {
     flexDirection: 'row',

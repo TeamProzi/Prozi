@@ -23,8 +23,7 @@ import PhoneNumbers from './PhoneNumbers';
 
 export default function App() {
 
-  SplashScreen.preventAutoHideAsync();
-
+  {/**FONTS */}
   const [fontsLoaded, fontError] = useFonts({
     'SourceSans3Light': require('./assets/Source_Sans_3/static/SourceSans3-Light.ttf'),
     'SourceSans3Bold': require('./assets/Source_Sans_3/static/SourceSans3-Bold.ttf')
@@ -40,6 +39,7 @@ export default function App() {
     return null;
   }
 
+  {/**SECTION IMPORTS */}
   let protocols = [{ name: "Lockouts >", icon: require("./assets/lock.png") },
   { name: "Maintenance >", icon: require("./assets/maintenance.png") },
   { name: "Substances >", icon: require("./assets/substances.png") },
@@ -52,6 +52,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+
+      {/**HEADER */}
       <View style={styles.innerContainer}>
         <View style={styles.headerContainer}>
           <Text style={styles.welcome}>Welcome!</Text>

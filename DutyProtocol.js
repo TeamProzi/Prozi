@@ -11,16 +11,16 @@ import {
     TouchableOpacity,
     onPress,
     Touchable
-  } from 'react-native';
+} from 'react-native';
 
-export default function DutyProtocol({name, icon}) {
+export default function DutyProtocol({ name, icon }) {
     return (
-    <TouchableOpacity style={styles.button}>
-        <View style={styles.view}>
-            <Image style={styles.image} source={icon}></Image>
-        </View>
-        <Text style={styles.text}>{name}</Text>
-    </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+            <View style={styles.view}>
+                <Image style={styles.image} source={icon}></Image>
+            </View>
+            <Text style={styles.text}>{name}</Text>
+        </TouchableOpacity>
     )
 }
 

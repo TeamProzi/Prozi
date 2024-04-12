@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
   },
   pnrView: {
     width: '100%',
-    backgroundColor: 'blue',
+    backgroundColor: 'red',
     padding: 10
   },
   phoneNumberResources: {

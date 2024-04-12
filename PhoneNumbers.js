@@ -20,7 +20,7 @@ export default function PhoneNumbers({icon, phone, labelText, isText}) {
                 <View style={styles.phoneIcon}>
                     <Text style={styles.phoneIconText}>{icon}</Text>
                 </View>
-                <Text>{labelText}</Text>
+                <Text style={styles.labelText}>{labelText}</Text>
             </TouchableOpacity>
         )
     }
@@ -30,7 +30,7 @@ export default function PhoneNumbers({icon, phone, labelText, isText}) {
                 <View style={styles.phoneIcon}>
                 <Image source={icon} style={{height: 18, width: 18 }} />
                 </View>
-                <Text>{labelText}</Text>
+                <Text style={styles.labelText}>{labelText}</Text>
             </TouchableOpacity>
         )
     }
@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
         borderRadius: 3,
         height: 21,
         width: 21,
-        paddingRight: 10,
         alignItems: 'center',
         flexDirection: 'column',
         justifyContent: 'center'
@@ -58,4 +57,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: "#007360"
     },
+    labelText: {
+        paddingLeft: 5
+    }
 })

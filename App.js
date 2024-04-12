@@ -23,7 +23,7 @@ import PhoneNumbers from './PhoneNumbers';
 
 export default function App() {
 
-  {/**FONTS */}
+  {/**FONTS */ }
   const [fontsLoaded, fontError] = useFonts({
     'SourceSans3Light': require('./assets/Source_Sans_3/static/SourceSans3-Light.ttf'),
     'SourceSans3Bold': require('./assets/Source_Sans_3/static/SourceSans3-Bold.ttf')
@@ -39,7 +39,7 @@ export default function App() {
     return null;
   }
 
-  {/**SECTION IMPORTS */}
+  {/**SECTION IMPORTS */ }
   let protocols = [{ name: "Lockouts >", icon: require("./assets/lock.png") },
   { name: "Maintenance >", icon: require("./assets/maintenance.png") },
   { name: "Substances >", icon: require("./assets/substances.png") },
@@ -67,8 +67,10 @@ export default function App() {
       <View style={styles.pnrView}>
         {/*TITLE TEXT*/}
         <View style={styles.pnrTitle}>
-          <Text style={{ paddingLeft: 10, paddingRight: 10, paddingTop: 5, 
-                          fontSize: 15 , fontFamily: 'SourceSans3Light'}}>
+          <Text style={{
+            paddingLeft: 10, paddingRight: 10, paddingTop: 5,
+            fontSize: 15, fontFamily: 'SourceSans3Light'
+          }}>
             <Text style={styles.boldTitleText}>Contact </Text>
             Staff via Phone</Text>
           <Image source={require("./assets/phone_calling.png")} style={{ height: 10, width: 10 }} />
@@ -103,8 +105,18 @@ export default function App() {
         </View>
       </View>
 
-
       {/*ALL PROTOCOLS*/}
+      {/*TITLE TEXT*/}
+      <View style={{flexDirection: 'row', justifyContent: 'flex-start', 
+                    alignItems: 'center', width: '100%', padding: 10}}>
+        <Text style={{
+          paddingLeft: 10, paddingRight: 10, paddingTop: 5,
+          fontSize: 15, fontFamily: 'SourceSans3Light'
+        }}>Common
+        <Text style={styles.boldTitleText}> Duty Protocols</Text>
+        </Text>
+        <Image source={require("./assets/phone_calling.png")} style={{ height: 10, width: 10 }} />
+      </View>
       <View style={styles.protocols}>
         {[0, 1, 2, 3].map((idx) => (
           <View key={idx} style={styles.protoColumn}>
@@ -115,6 +127,8 @@ export default function App() {
           </View>
         ))}
       </View>
+
+
       <StatusBar style="auto" />
     </View>
   );
@@ -190,13 +204,11 @@ const styles = StyleSheet.create({
   },
   pnrView: {
     width: '100%',
-    backgroundColor: 'red',
     padding: 10
   },
   phoneNumberResources: {
     flexDirection: 'row',
-    width: '75%',
-    backgroundColor: 'red'
+    width: '75%'
   },
   protocols: {
     flexDirection: 'row',
@@ -212,11 +224,12 @@ const styles = StyleSheet.create({
     padding: 10, // Adjust spacing as needed
   },
   pnColumn: {
-    width: '47%',
+    width: '45%',
     padding: 10
   },
   pnrInnerContainer: {
     flexDirection: 'row',
-    width: "75%%"
+    width: "75%",
+    paddingTop: 8
   }
 });

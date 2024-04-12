@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
   },
   pNumbers: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
   },
   protoColumn: {
     width: '50%', // Two columns for each row
@@ -212,6 +212,7 @@ const styles = StyleSheet.create({
   },
   pnColumn: {
     width: '40%',
+    backgroundColor: 'purple'
   },
   pnrInnerContainer: {
     flexDirection: 'row',

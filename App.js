@@ -16,6 +16,7 @@ import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
+{}
 import DutyProtocol from './DutyProtocol';
 import Maintenance from './Maintenance'
 import Advocate from './Advocate';
@@ -40,10 +41,10 @@ export default function App() {
   }
 
   {/**SECTION IMPORTS */ }
-  let protocols = [{ name: "Lockouts >", icon: require("./assets/lock.png") },
-  { name: "Maintenance >", icon: require("./assets/maintenance.png") },
-  { name: "Substances >", icon: require("./assets/substances.png") },
-  { name: "Health >", icon: require("./assets/health.png") }];
+  let protocols = [{ name: "Lockouts", icon: require("./assets/lock.png") },
+  { name: "Maintenance", icon: require("./assets/maintenance.png") },
+  { name: "Substances", icon: require("./assets/substances.png") },
+  { name: "Health", icon: require("./assets/health.png") }];
 
   let phones = [{ icon: "RCD", phone: Linking.openURL('tel:+1(314)-323-0840'), labelText: "RCD on Call", isText: true },
   { icon: "AR\nCD", phone: Linking.openURL('tel:+1(314)-393-6354'), labelText: "ARCD on Call", isText: true },
@@ -110,12 +111,11 @@ export default function App() {
       <View style={{flexDirection: 'row', justifyContent: 'flex-start', 
                     alignItems: 'center', width: '100%', padding: 10}}>
         <Text style={{
-          paddingLeft: 10, paddingRight: 10, paddingTop: 5,
+          paddingLeft: 10, paddingRight: 10,
           fontSize: 15, fontFamily: 'SourceSans3Light'
         }}>Common
         <Text style={styles.boldTitleText}> Duty Protocols</Text>
         </Text>
-        <Image source={require("./assets/phone_calling.png")} style={{ height: 10, width: 10 }} />
       </View>
       <View style={styles.protocols}>
         {[0, 1, 2, 3].map((idx) => (
@@ -144,8 +144,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start'
   },
   headerContainer: {
-    flexDirection: 'column',
-    padding: 0
+    flexDirection: 'column'
   },
   innerContainer: {
     flexDirection: 'row',
@@ -204,7 +203,7 @@ const styles = StyleSheet.create({
   },
   pnrView: {
     width: '100%',
-    padding: 10
+    paddingLeft: 10, paddingRight: 10, paddingTop: 10
   },
   phoneNumberResources: {
     flexDirection: 'row',
@@ -212,8 +211,7 @@ const styles = StyleSheet.create({
   },
   protocols: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    backgroundColor: 'yellow'
+    flexWrap: 'wrap'
   },
   pNumbers: {
     flexDirection: 'row',
@@ -221,7 +219,9 @@ const styles = StyleSheet.create({
   },
   protoColumn: {
     width: '50%', // Two columns for each row
-    padding: 10, // Adjust spacing as needed
+    paddingLeft: 15, // Adjust spacing as needed
+    paddingTop: 10,
+    paddingBottom: 10
   },
   pnColumn: {
     width: '45%',

@@ -10,7 +10,8 @@ import {
     Platform,
     TouchableOpacity,
     onPress,
-    Touchable
+    Touchable,
+
 } from 'react-native';
 
 export default function DutyProtocol({ name, icon }) {
@@ -19,7 +20,12 @@ export default function DutyProtocol({ name, icon }) {
             <View style={styles.view}>
                 <Image style={styles.image} source={icon}></Image>
             </View>
-            <Text style={styles.text}>{name}</Text>
+            <View style={{flexDirection: 'row', alignItems: 'center', 
+                        justifyContent: 'flex-end',
+                        width: '70%'}}>
+                <Text style={styles.text}>{name}</Text>
+                <Image source={require("./assets/Arrow.png")} style={{ height: 10, width: 3.333 }} />
+            </View>
         </TouchableOpacity>
     )
 }
@@ -46,7 +52,8 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: '#FFFFFF',
         fontWeight: '500',
-        paddingLeft: 5
+        paddingLeft: 5,
+        paddingRight: 5
     },
     image: {
         height: 15,

@@ -16,7 +16,7 @@ import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
-{}
+{/**SECTION IMPORTS */ }
 import DutyProtocol from './DutyProtocol';
 import Maintenance from './Maintenance'
 import Advocate from './Advocate';
@@ -40,7 +40,7 @@ export default function App() {
     return null;
   }
 
-  {/**SECTION IMPORTS */ }
+  {/**SECTION IMPORT INSTANCE CREATION */ }
   let protocols = [{ name: "Lockouts", icon: require("./assets/lock.png") },
   { name: "Maintenance", icon: require("./assets/maintenance.png") },
   { name: "Substances", icon: require("./assets/substances.png") },
@@ -64,7 +64,7 @@ export default function App() {
         <Image source={require("./assets/washuLogo.png")} />
       </View>
 
-      {/* PHONE NUMBER & RESOURCES */}
+      {/** SECTION 1 --PHONE NUMBER & RESOURCES */}
       <View style={styles.pnrView}>
         {/*TITLE TEXT*/}
         <View style={styles.pnrTitle}>
@@ -106,17 +106,20 @@ export default function App() {
         </View>
       </View>
 
-      {/*ALL PROTOCOLS*/}
+      {/*SECTION 2 - ALL PROTOCOLS*/}
       {/*TITLE TEXT*/}
-      <View style={{flexDirection: 'row', justifyContent: 'flex-start', 
-                    alignItems: 'center', width: '100%', padding: 10}}>
+      <View style={{
+        flexDirection: 'row', justifyContent: 'flex-start',
+        alignItems: 'center', width: '100%', padding: 10
+      }}>
         <Text style={{
           paddingLeft: 10, paddingRight: 10,
           fontSize: 15, fontFamily: 'SourceSans3Light'
         }}>Common
-        <Text style={styles.boldTitleText}> Duty Protocols</Text>
+          <Text style={styles.boldTitleText}> Duty Protocols</Text>
         </Text>
       </View>
+      {/*PROTOCOLS*/}
       <View style={styles.protocols}>
         {[0, 1, 2, 3].map((idx) => (
           <View key={idx} style={styles.protoColumn}>
@@ -128,6 +131,36 @@ export default function App() {
         ))}
       </View>
 
+      {/*SECTION 3 - DUTY LINKS*/}
+      {/**DUTY TITLE */}
+      <View style={{
+        flexDirection: 'row', justifyContent: 'flex-start',
+        alignItems: 'center', width: '100%', padding: 10
+      }}>
+        <Text style={{
+          paddingLeft: 10, paddingRight: 10,
+          fontSize: 15, fontFamily: 'SourceSans3Light'
+        }}>Duty
+          <Text style={styles.boldTitleText}> Links</Text>
+        </Text>
+      </View>
+      {/**DUTY LINKS*/}
+      <View style={styles.dutyLinks}>
+        {/**LEFT LINKS */}
+        <View style={styles.leftLinks}>
+          <View style={styles.maintenanceGroup}>
+          </View>
+          <View style={styles.dutyFormGroup}>
+          </View>
+        </View>
+        {/**RIGHT LINKS */}
+        <View style={styles.rightLinks}>
+          <View style={styles.advocateGroup}>
+          </View>
+          <View style={styles.faqGroup}>
+          </View>
+        </View>
+      </View>
 
       <StatusBar style="auto" />
     </View>
@@ -231,5 +264,86 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: "75%",
     paddingTop: 8
+  },
+  leftLinks: {
+    flexDirection: 'column',
+    backgroundColor: 'red',
+    paddingBottom: 10
+  },
+  rightLinks: {
+    flexDirection: 'column',
+    paddingLeft: 30
+  },
+  dutyLinks: {
+    flexDirection: 'row',
+  },
+  maintenanceGroup: {
+    width: 134,
+    height: 156,
+    backgroundColor: 'blue',
+    borderRadius: 15,
+    ...Platform.select({
+      ios: {
+        shadowColor: '#002B23',
+        shadowOffset: { width: 4, height: 4 },
+        shadowOpacity: 0.25,
+        shadowRadius: 13.5,
+      },
+      android: {
+        elevation: 4,
+      },
+    }),
+  },
+  dutyFormGroup: {
+    width: 134,
+    height: 81,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 15,
+    paddingTop: 10,
+    ...Platform.select({
+      ios: {
+        shadowColor: '#002B23',
+        shadowOffset: { width: 4, height: 4 },
+        shadowOpacity: 0.25,
+        shadowRadius: 13.5,
+      },
+      android: {
+        elevation: 4,
+      },
+    }),
+  },
+  advocateGroup: {
+    width: 188,
+    height: 81,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 15,
+    ...Platform.select({
+      ios: {
+        shadowColor: '#002B23',
+        shadowOffset: { width: 4, height: 4 },
+        shadowOpacity: 0.25,
+        shadowRadius: 13.5,
+      },
+      android: {
+        elevation: 4,
+      },
+    }),
+  },
+  faqGroup: {
+    width: 188,
+    height: 156,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 15,
+    ...Platform.select({
+      ios: {
+        shadowColor: '#002B23',
+        shadowOffset: { width: 4, height: 4 },
+        shadowOpacity: 0.25,
+        shadowRadius: 13.5,
+      },
+      android: {
+        elevation: 4,
+      },
+    }),
   }
 });

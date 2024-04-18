@@ -61,7 +61,7 @@ export default function App() {
           <Text style={styles.titleText}>
             <Text style={styles.boldTitleText}>RA</Text> | Washington University in St. Louis</Text>
         </View>
-        <Image source={require("./assets/washuLogo.png")} />
+        <Image style={{ marginRight: 10 }} source={require("./assets/washuLogo.png")} />
       </View>
 
       {/** SECTION 1 --PHONE NUMBER & RESOURCES */}
@@ -149,6 +149,14 @@ export default function App() {
         {/**LEFT LINKS */}
         <View style={styles.leftLinks}>
           <View style={styles.maintenanceGroup}>
+            <View style={{
+              backgroundColor: '#007360',
+              width: "60%", flexDirection: 'row',
+              justifyContent: 'center', marginLeft: 12,
+              marginTop: 12, borderRadius: 7, padding: 4
+            }}>
+              <Text style={{fontFamily: "SourceSans3Bold", color: 'white'}}>Maintenance</Text>
+            </View>
           </View>
           <View style={styles.dutyFormGroup}>
           </View>
@@ -177,7 +185,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start'
   },
   headerContainer: {
-    flexDirection: 'column'
+    flexDirection: 'column',
+    width: "65%",
   },
   innerContainer: {
     flexDirection: 'row',
@@ -201,7 +210,6 @@ const styles = StyleSheet.create({
     }),
   },
   welcome: {
-    paddingBottom: 0,
     fontSize: 20,
     fontFamily: 'SourceSans3Light'
   },
@@ -244,17 +252,16 @@ const styles = StyleSheet.create({
   },
   protocols: {
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    justifyContent: 'center'
   },
   pNumbers: {
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
   protoColumn: {
-    width: '50%', // Two columns for each row
-    paddingLeft: 15, // Adjust spacing as needed
-    paddingTop: 10,
-    paddingBottom: 10
+    width: '45%', // Two columns for each row
+    marginBottom: 15
   },
   pnColumn: {
     width: '45%',
@@ -265,22 +272,29 @@ const styles = StyleSheet.create({
     width: "75%",
     paddingTop: 8
   },
+  dutyLinks: {
+    flexDirection: 'row',
+    width: "100%",
+    justifyContent: 'center'
+  },
   leftLinks: {
+    height: 300,
+    width: "40%",
     flexDirection: 'column',
-    backgroundColor: 'red',
-    paddingBottom: 10
+    paddingLeft: 10,
+    marginRight: 10
   },
   rightLinks: {
     flexDirection: 'column',
-    paddingLeft: 30
-  },
-  dutyLinks: {
-    flexDirection: 'row',
+    width: "50%",
+    paddingRight: 10,
+    marginLeft: 10
   },
   maintenanceGroup: {
-    width: 134,
+    width: '100%',
     height: 156,
-    backgroundColor: 'blue',
+    backgroundColor: '#FFFFFF',
+    marginBottom: 10,
     borderRadius: 15,
     ...Platform.select({
       ios: {
@@ -295,11 +309,10 @@ const styles = StyleSheet.create({
     }),
   },
   dutyFormGroup: {
-    width: 134,
+    width: "100%",
     height: 81,
     backgroundColor: '#FFFFFF',
     borderRadius: 15,
-    paddingTop: 10,
     ...Platform.select({
       ios: {
         shadowColor: '#002B23',
@@ -313,9 +326,10 @@ const styles = StyleSheet.create({
     }),
   },
   advocateGroup: {
-    width: 188,
+    width: "100%",
     height: 81,
     backgroundColor: '#FFFFFF',
+    marginBottom: 10,
     borderRadius: 15,
     ...Platform.select({
       ios: {
@@ -330,7 +344,7 @@ const styles = StyleSheet.create({
     }),
   },
   faqGroup: {
-    width: 188,
+    width: "100%",
     height: 156,
     backgroundColor: '#FFFFFF',
     borderRadius: 15,

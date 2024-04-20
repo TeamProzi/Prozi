@@ -149,27 +149,32 @@ export default function App() {
         {/**LEFT LINKS */}
         <View style={styles.leftLinks}>
           <View style={styles.maintenanceGroup}>
-            <View style={{
-              backgroundColor: '#007360',
-              width: "60%", flexDirection: 'row',
-              justifyContent: 'center', marginLeft: 12,
-              marginTop: 12, borderRadius: 7, padding: 4
-            }}>
-              <Text style={{fontFamily: "SourceSans3Bold", color: 'white'}}>Maintenance</Text>
+            <View style={styles.linkTitles}>
+              <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>Maintenance</Text>
             </View>
           </View>
           <View style={styles.dutyFormGroup}>
+            <View style={styles.linkTitles}>
+              <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>Duty Form</Text>
+            </View>
           </View>
         </View>
         {/**RIGHT LINKS */}
         <View style={styles.rightLinks}>
           <View style={styles.advocateGroup}>
+            <View style={styles.linkTitles}>
+              <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>Advocate</Text>
+            </View>
           </View>
           <View style={styles.faqGroup}>
+            <View style={styles.linkTitles}>
+              <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>FAQ</Text>
+            </View>
           </View>
         </View>
       </View>
 
+      {/*SECTION 4 - FOOTER LINKS*/}
       <StatusBar style="auto" />
     </View>
   );
@@ -284,6 +289,15 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     marginRight: 10
   },
+  linkTitles: {
+    backgroundColor: '#007360',
+    marginLeft: 12, marginTop: 12, borderRadius: 7,
+    alignSelf: 'center', paddingHorizontal: 10,
+    paddingVertical: 4,
+    position: 'absolute',
+    top: 0,
+    left: 0
+  },
   rightLinks: {
     flexDirection: 'column',
     width: "50%",
@@ -296,6 +310,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     marginBottom: 10,
     borderRadius: 15,
+    position: 'relative',
     ...Platform.select({
       ios: {
         shadowColor: '#002B23',

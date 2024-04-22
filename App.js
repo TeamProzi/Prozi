@@ -152,6 +152,10 @@ export default function App() {
             <View style={styles.linkTitles}>
               <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>Maintenance</Text>
             </View>
+            <View>
+              <Image style={{ width: 30, height: 30 }} source={require("./assets/Laundry.png")} />
+              <Image style={{ width: 30, height: 30 }} source={require("./assets/general_maintenance.png")} />
+            </View>
           </View>
           <View style={styles.dutyFormGroup}>
             <View style={styles.linkTitles}>

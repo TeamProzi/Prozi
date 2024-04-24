@@ -16,7 +16,7 @@ import {
 export default function PhoneNumbers({icon, labelText, isText}) {
     if (isText) {
         return (
-            <TouchableOpacity style={styles.phoneNumberStyle} onPress={() => {Linking.openURL('tel:+1(314)-323-0840')}}>
+            <TouchableOpacity style={styles.phoneNumberStyle} onPress={() => {Linking.openURL('tel:+1(847)-502-8096')}}>
                 <View style={styles.phoneIcon}>
                     <Text style={styles.phoneIconText}>{icon}</Text>
                 </View>
@@ -26,7 +26,7 @@ export default function PhoneNumbers({icon, labelText, isText}) {
     }
     else {
         return (
-            <TouchableOpacity style={styles.phoneNumberStyle} onPress={() => {Linking.openURL('tel:+1(314)-323-0840')}}>
+            <TouchableOpacity style={styles.phoneNumberStyle} onPress={() => {Linking.openURL('tel:+1(847)-502-8096')}}>
                 <View style={styles.phoneIcon}>
                 <Image source={icon} style={{height: 18, width: 18 }} />
                 </View>

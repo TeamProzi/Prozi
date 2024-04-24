@@ -72,7 +72,7 @@ export default function Duty() {
         {/*TITLE TEXT*/}
         <View style={styles.pnrTitle}>
           <Text style={{
-            paddingLeft: 10, paddingRight: 10,
+            paddingLeft: 10, paddingRight: 10, paddingTop: 5,
             fontSize: 15, fontFamily: 'SourceSans3Light'
           }}>
             <Text style={styles.boldTitleText}>Contact </Text>
@@ -170,8 +170,8 @@ export default function Duty() {
               <Text style={{ fontFamily: "SourceSans3Bold",fontSize: 12, color: 'white' }}>Duty Form</Text>
             </View>
             <View style={{ marginTop: 40, padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
-              <Image style={{ width: 25, height: 25}} source={require("./../../assets/End_of_shift.png")} />
-              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 12 }}>Laundry Form</Text>
+              <Image style={{ width: 20, height: 20}} source={require("./../../assets/End_of_shift.png")} />
+              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 12 }}>Duty Form</Text>
             </View>
           </View>
         </View>

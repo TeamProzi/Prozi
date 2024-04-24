@@ -13,10 +13,10 @@ import {
     Touchable
 } from 'react-native';
 
-export default function PhoneNumbers({icon, phone, labelText, isText}) {
+export default function PhoneNumbers({icon, labelText, isText}) {
     if (isText) {
         return (
-            <TouchableOpacity style={styles.phoneNumberStyle} onPress={phone}>
+            <TouchableOpacity style={styles.phoneNumberStyle} onPress={() => {Linking.openURL('tel:+1(314)-323-0840')}}>
                 <View style={styles.phoneIcon}>
                     <Text style={styles.phoneIconText}>{icon}</Text>
                 </View>
@@ -26,7 +26,7 @@ export default function PhoneNumbers({icon, phone, labelText, isText}) {
     }
     else {
         return (
-            <TouchableOpacity style={styles.phoneNumberStyle} onPress={phone}>
+            <TouchableOpacity style={styles.phoneNumberStyle} onPress={() => {Linking.openURL('tel:+1(314)-323-0840')}}>
                 <View style={styles.phoneIcon}>
                 <Image source={icon} style={{height: 18, width: 18 }} />
                 </View>

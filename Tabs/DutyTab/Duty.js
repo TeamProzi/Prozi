@@ -49,10 +49,10 @@ export default function Duty() {
   { name: "Substances", icon: require("./../../assets/substances.png") },
   { name: "Health", icon: require("./../../assets/health.png") }];
 
-  let phones = [{ icon: "RCD", phone: Linking.openURL('tel:+1(314)-323-0840'), labelText: "RCD on Call", isText: true },
-  { icon: "AR\nCD", phone: Linking.openURL('tel:+1(314)-393-6354'), labelText: "ARCD on Call", isText: true },
-  { icon: "RA", phone: Linking.openURL('tel:+1(314)-374-1321'), labelText: "RA on Call", isText: true },
-  { icon: require("./../../assets/WUPD.png"), phone: Linking.openURL('tel:+1(314)-374-1321'), labelText: "WUPD Phone", isText: false }];
+  let phones = [{ icon: "RCD", labelText: "RCD on Call", isText: true },
+  { icon: "AR\nCD", labelText: "ARCD on Call", isText: true },
+  { icon: "RA", labelText: "RA on Call", isText: true },
+  { icon: require("./../../assets/WUPD.png"), labelText: "WUPD Phone", isText: false }];
 
   return (
     <View style={styles.container}>
@@ -138,7 +138,7 @@ export default function Duty() {
       {/**DUTY TITLE */}
       <View style={{
         flexDirection: 'row', justifyContent: 'flex-start',
-        alignItems: 'center', width: '100%', padding: 10
+        alignItems: 'center', width: '100%', paddingHorizontal: 10, paddingBottom: 10
       }}>
         <Text style={{
           paddingLeft: 10, paddingRight: 10,
@@ -153,25 +153,25 @@ export default function Duty() {
         <View style={styles.leftLinks}>
           <View style={styles.maintenanceGroup}>
             <View style={styles.linkTitles}>
-              <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>Maintenance</Text>
+              <Text style={{ fontFamily: "SourceSans3Bold",fontSize: 12, color: 'white' }}>Maintenance</Text>
             </View>
             <View style={{ marginTop: 40, paddingHorizontal: 10, paddingVertical: 17, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
-              <Image style={{ width: 30, height: 30 }} source={require("./../../assets/Laundry.png")} />
-              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 15 }}>Laundry Form</Text>
+              <Image style={{ width: 25, height: 25 }} source={require("./../../assets/Laundry.png")} />
+              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 12 }}>Laundry Form</Text>
             </View>
             <View style={{width: "90%", height: 0.5, backgroundColor: "#6C7373", alignSelf: 'center'}}></View>
             <View style={{padding: 10, paddingHorizontal: 10, paddingVertical: 17, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
-              <Image style={{ width: 30, height: 30 }} source={require("s./../../assets/general_maintenance.png")} />
-              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 15 }}>General{'\n'}Request Form</Text>
+              <Image style={{ width: 25, height: 25 }} source={require("s./../../assets/general_maintenance.png")} />
+              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 12}}>General{'\n'}Request Form</Text>
             </View>
           </View>
           <View style={styles.dutyFormGroup}>
             <View style={styles.linkTitles}>
-              <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>Duty Form</Text>
+              <Text style={{ fontFamily: "SourceSans3Bold",fontSize: 12, color: 'white' }}>Duty Form</Text>
             </View>
             <View style={{ marginTop: 40, padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
               <Image style={{ width: 25, height: 25}} source={require("./../../assets/End_of_shift.png")} />
-              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 15 }}>Laundry Form</Text>
+              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 12 }}>Laundry Form</Text>
             </View>
           </View>
         </View>
@@ -179,30 +179,30 @@ export default function Duty() {
         <View style={styles.rightLinks}>
           <View style={styles.advocateGroup}>
             <View style={styles.linkTitles}>
-              <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>Advocate</Text>
+              <Text style={{ fontFamily: "SourceSans3Bold", fontSize: 12, color: 'white' }}>Advocate</Text>
             </View>
             <View style={{ marginTop: 40, padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
               <Image style={{ width: 25, height: 25, marginLeft: 5}} source={require("./../../assets/IR_Form.png")} />
-              <Text style={{ fontFamily: "SourceSans3Light", fontSize: 15 }}> Write Incident Report</Text>
+              <Text style={{ fontFamily: "SourceSans3Light", fontSize: 12 }}> Write Incident Report</Text>
             </View>
           </View>
           <View style={styles.faqGroup}>
             <View style={styles.linkTitles}>
-              <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>FAQ</Text>
+              <Text style={{ fontFamily: "SourceSans3Bold", fontSize: 12, color: 'white' }}>FAQ</Text>
             </View>
             <View style={{ marginTop: 40, padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
-              <Image style={{ width: 25, height: 25, marginLeft: 5}} source={require("./../../assets/ARCD.png")} />
-              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 15 }}>When to call ARCD?</Text>
+              <Image style={{ width: 20, height: 20, marginLeft: 5}} source={require("./../../assets/ARCD.png")} />
+              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 12 }}>When to call ARCD?</Text>
             </View>
             <View style={{width: "90%", height: 0.5, backgroundColor: "#6C7373", alignSelf: 'center'}}></View>
             <View style={{padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
-              <Image style={{ width: 30, height: 30 }} source={require("./../../assets/RCD.png")} />
-              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 15 }}>When to call RCD?</Text>
+              <Image style={{ width: 25, height: 25 }} source={require("./../../assets/RCD.png")} />
+              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 12 }}>When to call RCD?</Text>
             </View>
             <View style={{width: "90%", height: 0.5, backgroundColor: "#6C7373", alignSelf: 'center'}}></View>
             <View style={{padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
-              <Image style={{ width: 30, height: 30 }} source={require("./../../assets/IR.png")} />
-              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 15 }}>When to write an IR?</Text>
+              <Image style={{ width: 25, height: 25 }} source={require("./../../assets/IR.png")} />
+              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 12 }}>When to write an IR?</Text>
             </View>
           </View>
         </View>
@@ -340,7 +340,7 @@ const styles = StyleSheet.create({
   },
   maintenanceGroup: {
     width: '100%',
-    height: 190,
+    height: 180,
     backgroundColor: '#FFFFFF',
     marginBottom: 10,
     borderRadius: 15,
@@ -394,7 +394,7 @@ const styles = StyleSheet.create({
   },
   faqGroup: {
     width: "100%",
-    height: 190,
+    height: 180,
     backgroundColor: '#FFFFFF',
     borderRadius: 15,
     ...Platform.select({

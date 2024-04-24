@@ -72,7 +72,7 @@ export default function Duty() {
         {/*TITLE TEXT*/}
         <View style={styles.pnrTitle}>
           <Text style={{
-            paddingLeft: 10, paddingRight: 10, paddingTop: 5,
+            paddingLeft: 10, paddingRight: 10,
             fontSize: 15, fontFamily: 'SourceSans3Light'
           }}>
             <Text style={styles.boldTitleText}>Contact </Text>
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'space-around',
     alignItems: 'center',
-    height: 150,
+    height: 140,
     alignItems: 'center',
     paddingTop: 40,
     backgroundColor: '#FBFBFB',

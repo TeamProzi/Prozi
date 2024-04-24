@@ -25,7 +25,7 @@ import Maintenance from './Maintenance'
 import Advocate from './Advocate';
 import PhoneNumbers from './PhoneNumbers';
 
-const Duty = () => {
+export default function Duty() {
 
   {/**FONTS */ }
   const [fontsLoaded, fontError] = useFonts({
@@ -383,5 +383,3 @@ const styles = StyleSheet.create({
       }),
     }
   });
-
-  export default Duty;

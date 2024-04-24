@@ -24,7 +24,7 @@ export default function DutyProtocol({ name, icon }) {
                         justifyContent: 'flex-end',
                         width: '70%'}}>
                 <Text style={styles.text}>{name}</Text>
-                <Image source={require("./assets/Arrow.png")} style={{ height: 10, width: 3.333 }} />
+                <Image source={require("./../../assets/Arrow.png")} style={{ height: 10, width: 3.333 }} />
             </View>
         </TouchableOpacity>
     )

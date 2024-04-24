@@ -155,13 +155,13 @@ export default function Duty() {
             <View style={styles.linkTitles}>
               <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>Maintenance</Text>
             </View>
-            <View style={{ marginTop: 40, padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
+            <View style={{ marginTop: 40, paddingHorizontal: 10, paddingVertical: 17, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
               <Image style={{ width: 30, height: 30 }} source={require("./../../assets/Laundry.png")} />
               <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 15 }}>Laundry Form</Text>
             </View>
             <View style={{width: "90%", height: 0.5, backgroundColor: "#6C7373", alignSelf: 'center'}}></View>
-            <View style={{padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
-              <Image style={{ width: 30, height: 30 }} source={require("./../../assets/general_maintenance.png")} />
+            <View style={{padding: 10, paddingHorizontal: 10, paddingVertical: 17, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
+              <Image style={{ width: 30, height: 30 }} source={require("s./../../assets/general_maintenance.png")} />
               <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 15 }}>General{'\n'}Request Form</Text>
             </View>
           </View>
@@ -170,7 +170,7 @@ export default function Duty() {
               <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>Duty Form</Text>
             </View>
             <View style={{ marginTop: 40, padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
-              <Image style={{ width: 30, height: 30 }} source={require("./../../assets/End_of_shift.png")} />
+              <Image style={{ width: 25, height: 25}} source={require("./../../assets/End_of_shift.png")} />
               <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 15 }}>Laundry Form</Text>
             </View>
           </View>
@@ -181,10 +181,28 @@ export default function Duty() {
             <View style={styles.linkTitles}>
               <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>Advocate</Text>
             </View>
+            <View style={{ marginTop: 40, padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
+              <Image style={{ width: 25, height: 25, marginLeft: 5}} source={require("./../../assets/IR_Form.png")} />
+              <Text style={{ fontFamily: "SourceSans3Light", fontSize: 15 }}> Write Incident Report</Text>
+            </View>
           </View>
           <View style={styles.faqGroup}>
             <View style={styles.linkTitles}>
               <Text style={{ fontFamily: "SourceSans3Bold", color: 'white' }}>FAQ</Text>
+            </View>
+            <View style={{ marginTop: 40, padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
+              <Image style={{ width: 25, height: 25, marginLeft: 5}} source={require("./../../assets/ARCD.png")} />
+              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 15 }}>When to call ARCD?</Text>
+            </View>
+            <View style={{width: "90%", height: 0.5, backgroundColor: "#6C7373", alignSelf: 'center'}}></View>
+            <View style={{padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
+              <Image style={{ width: 30, height: 30 }} source={require("./../../assets/RCD.png")} />
+              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 15 }}>When to call RCD?</Text>
+            </View>
+            <View style={{width: "90%", height: 0.5, backgroundColor: "#6C7373", alignSelf: 'center'}}></View>
+            <View style={{padding: 10, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
+              <Image style={{ width: 30, height: 30 }} source={require("./../../assets/IR.png")} />
+              <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 15 }}>When to write an IR?</Text>
             </View>
           </View>
         </View>
@@ -322,7 +340,7 @@ const styles = StyleSheet.create({
   },
   maintenanceGroup: {
     width: '100%',
-    height: 156,
+    height: 190,
     backgroundColor: '#FFFFFF',
     marginBottom: 10,
     borderRadius: 15,
@@ -341,7 +359,7 @@ const styles = StyleSheet.create({
   },
   dutyFormGroup: {
     width: "100%",
-    height: 100,
+    height: 92,
     backgroundColor: '#FFFFFF',
     borderRadius: 15,
     ...Platform.select({
@@ -358,7 +376,7 @@ const styles = StyleSheet.create({
   },
   advocateGroup: {
     width: "100%",
-    height: 81,
+    height: 92,
     backgroundColor: '#FFFFFF',
     marginBottom: 10,
     borderRadius: 15,
@@ -376,7 +394,7 @@ const styles = StyleSheet.create({
   },
   faqGroup: {
     width: "100%",
-    height: 156,
+    height: 190,
     backgroundColor: '#FFFFFF',
     borderRadius: 15,
     ...Platform.select({

@@ -161,7 +161,7 @@ export default function Duty() {
             </View>
             <View style={{width: "90%", height: 0.5, backgroundColor: "#6C7373", alignSelf: 'center'}}></View>
             <View style={{padding: 10, paddingHorizontal: 10, paddingVertical: 17, width: "100%", flexDirection: 'row', alignItems: 'center' }}>
-              <Image style={{ width: 25, height: 25 }} source={require("s./../../assets/general_maintenance.png")} />
+              <Image style={{ width: 25, height: 25 }} source={require("./../../assets/general_maintenance.png")} />
               <Text style={{ marginLeft: 10, fontFamily: "SourceSans3Light", fontSize: 12}}>General{'\n'}Request Form</Text>
             </View>
           </View>
